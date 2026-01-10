@@ -15,4 +15,21 @@ describe('CreateProduct workflow (unit)', () => {
     expect(body).toHaveProperty('product')
     expect(body.product).toHaveProperty('id', 'random-id')
   })
+  it('should return 500 and an error message when use-case throws', async () => {
+    class FailingCreateProduct {
+      async execute(): Promise<any> {
+        throw new Error('boom')
+      }
+    }
+
+    const createProduct = new FailingCreateProduct()
+    const controller = new CreateProductController(createProduct as any)
+
+    const httpResponse = await controller.handle({})
+
+    expect(httpResponse).toBeDefined()
+    expect(httpResponse.statusCode).toBe(500)
+    const body = httpResponse.body as any
+    expect(body).toHaveProperty('message', 'someting went wrong while creating product :(')
+  })
 })
