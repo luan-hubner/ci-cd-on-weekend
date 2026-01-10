@@ -32,4 +32,14 @@ describe('CreateProduct workflow (unit)', () => {
     const body = httpResponse.body as any
     expect(body).toHaveProperty('message', 'someting went wrong while creating product :(')
   })
+
+  it('should call createProduct.execute once', async () => {
+    const executeMock = jest.fn().mockResolvedValue({ product: { id: 'random-id' } })
+    const createProduct = { execute: executeMock }
+    const controller = new CreateProductController(createProduct as any)
+
+    await controller.handle({})
+
+    expect(executeMock).toHaveBeenCalledTimes(1)
+  })
 })
