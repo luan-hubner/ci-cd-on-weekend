@@ -1,35 +1,28 @@
 {
   "compilerOptions": {
-    "allowJs": true,
-    "allowSyntheticDefaultImports": true,
-    "alwaysStrict": true,
     "target": "es2020",
-    "checkJs": false,
-    "declaration": true,
-    "declarationMap": true,
-    "esModuleInterop": true,
-    "strictPropertyInitialization": false,
-    "forceConsistentCasingInFileNames": true,
-    "useUnknownInCatchVariables": false,
-    "incremental": true,
+    "module": "CommonJS",
     "lib": [
       "es2020"
     ],
-    "module": "CommonJS",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "strict": true,
+    "alwaysStrict": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "forceConsistentCasingInFileNames": true,
+    "useUnknownInCatchVariables": false,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
-    "noImplicitAny": false,
-    "noImplicitThis": true,
     "noUnusedParameters": true,
-    "outDir": "dist",
-    "removeComments": true,
-    "resolveJsonModule": true,
+    "noImplicitThis": true,
+    "noImplicitAny": false,
     "skipLibCheck": true,
-    "sourceMap": true,
-    "strict": true,
-    "strictBindCallApply": true,
-    "strictFunctionTypes": true,
-    "strictNullChecks": true,
     "baseUrl": "./",
     "paths": {
       "@src/*": [
@@ -38,20 +31,6 @@
       "@test/*": [
         "./test/*"
       ]
-    },
-    "rootDirs": [
-      "./src",
-      "./test"
-    ],
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
-  },
-  "include": [
-    "./src/**/*.ts",
-    "./test/**/*.ts"
-  ],
-  "exclude": [
-    "./node_modules/*",
-    "dist"
-  ]
+    }
+  }
 }
