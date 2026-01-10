@@ -12,6 +12,9 @@
     "src/**/*.ts"
   ],
   "exclude": [
+    "**/*.spec.ts",
+    "**/*.e2e-spec.ts",
+    "**/__test__/**",
     "test",
     "node_modules",
     "dist"
