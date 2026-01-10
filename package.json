@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start:dev": "ts-node-dev --transpile-only src/index.ts"
+    "start:dev": "ts-node-dev --transpile-only src/index.ts",
+    "test:unit": "jest --config ./test/jest.json --runInBand",
+    "test:e2e": "jest --config ./test/jest-e2e.json --runInBand"
   },
   "keywords": [],
   "author": "",
