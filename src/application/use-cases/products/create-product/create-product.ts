@@ -6,6 +6,6 @@ export class CreateProduct {
       product: {
         id: 'random-id',
       },
-    }
+    };
   }
 }
